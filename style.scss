@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  background-color: hsl(0, 0%, 98%);
+}
+
+//| header
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(0, 0%, 100%);
+  padding: 1rem 4rem;
+  .logo {
+    font-size: 2.5vh;
+    color: hsl(200, 15%, 8%);
+    text-decoration: none;
+  }
+  .theme {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    .dark {
+      height: 2rem;
+    }
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+      color: hsl(200, 15%, 8%);
+    }
+  }
+}
+
+//| utility
+main {
+  padding: 1rem 0;
+  // position: relative;
+}
+.utility {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  margin: 1rem 0;
+  .search {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    .search-icon {
+      height: 1.5rem;
+      padding: 0 0.5rem;
+    }
+    input {
+      height: 2.5rem;
+      width: 20vw;
+      border-radius: 0 5px 5px 0;
+      border: none;
+      padding: 0 1rem;
+      font-weight: 600;
+      color: hsl(0, 0%, 52%);
+    }
+  }
+  .choose select {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    width: 20vw;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    option {
+      margin-top: 1rem;
+      padding: 0.5rem;
+      font-weight: 600;
+      width: inherit;
+    }
+  }
+}
+
+//| Country Gallery
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 3rem 2rem;
+  padding: 0 3rem;
+  margin-top: 1.5rem;
+  a {
+    text-decoration: none;
+    color: hsl(200, 15%, 8%);
+  }
+  .card {
+    cursor: pointer;
+    height: 17rem;
+    aspect-ratio: 0.8;
+    border-radius: 5px;
+    padding: 0 0 0.4rem;
+    overflow: hidden;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.24);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.07);
+    }
+    .flag {
+      background-color: teal;
+      height: 7rem;
+      width: 100%;
+    }
+    .about {
+      padding: 0.5rem 1rem;
+      h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        font-weight: 600;
+        span {
+          font-weight: initial;
+        }
+      }
+    }
+  }
+}
+
+//| Countries in detail
+
+.country-detailed {
+  flex-grow: 1;
+}
+
+.detailed {
+  position: absolute;
+  top: -80%;
+  left: 0;
+  height: 100%;
+  width: 100% !important;
+  padding: 5rem 4rem;
+  display: none;
+  flex-flow: column;
+  align-items: center;
+  background: white;
+  transition: all 0.3s ease-in-out;
+  .back {
+    cursor: pointer;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background: hsl(0, 0%, 98%);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.288);
+    // background-color: red;
+    img {
+      height: 1.2rem;
+      transform: rotate(180deg);
+    }
+  }
+  .country-info {
+    // background: teal;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    padding: 1rem;
+    margin-top: 4rem;
+    .flag {
+      height: 20rem;
+      aspect-ratio: 1;
+      border-radius: 5px;
+      object-fit: contain;      
+    }
+    .about-country {
+      .country-name {
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      .statistics {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+        margin: 1.5rem 0 2rem;
+        p {
+          font-weight: 600;
+          margin: 0.3rem 0;
+          span {
+            font-weight: initial;
+          }
+        }
+      }
+      .borders {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .b-text {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .cons {
+          span {
+            border: 2px solid hsla(0, 0%, 52%, 0.5);
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            line-height: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+//| additionals
+
+.active {
+  display: flex;
+  top: 0;
+  opacity: 1;
+}

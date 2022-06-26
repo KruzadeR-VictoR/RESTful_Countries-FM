@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  background-color: #fafafa;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  padding: 1rem 4rem;
+}
+
+header .logo {
+  font-size: 2.5vh;
+  color: #111517;
+  text-decoration: none;
+}
+
+header .theme {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .theme .dark {
+  height: 2rem;
+}
+
+header .theme span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111517;
+}
+
+main {
+  padding: 1rem 0;
+}
+
+.utility {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 4rem;
+  margin: 1rem 0;
+}
+
+.utility .search {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+}
+
+.utility .search .search-icon {
+  height: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.utility .search input {
+  height: 2.5rem;
+  width: 20vw;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  padding: 0 1rem;
+  font-weight: 600;
+  color: #858585;
+}
+
+.utility .choose select {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  width: 20vw;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.utility .choose select option {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  width: inherit;
+}
+
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 3rem 2rem;
+  padding: 0 3rem;
+  margin-top: 1.5rem;
+}
+
+.gallery a {
+  text-decoration: none;
+  color: #111517;
+}
+
+.gallery .card {
+  cursor: pointer;
+  height: 17rem;
+  aspect-ratio: 0.8;
+  border-radius: 5px;
+  padding: 0 0 0.4rem;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.24);
+          box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.gallery .card:hover {
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+}
+
+.gallery .card .flag {
+  background-color: teal;
+  height: 7rem;
+  width: 100%;
+}
+
+.gallery .card .about {
+  padding: 0.5rem 1rem;
+}
+
+.gallery .card .about h4 {
+  margin-bottom: 0.5rem;
+}
+
+.gallery .card .about p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.gallery .card .about p span {
+  font-weight: initial;
+}
+
+.country-detailed {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.detailed {
+  position: absolute;
+  top: -80%;
+  left: 0;
+  height: 100%;
+  width: 100% !important;
+  padding: 5rem 4rem;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.detailed .back {
+  cursor: pointer;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #fafafa;
+  -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.288);
+          box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.288);
+}
+
+.detailed .back img {
+  height: 1.2rem;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.detailed .country-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6rem;
+  padding: 1rem;
+  margin-top: 4rem;
+}
+
+.detailed .country-info .flag {
+  height: 20rem;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.detailed .country-info .about-country .country-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.detailed .country-info .about-country .statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.detailed .country-info .about-country .statistics p {
+  font-weight: 600;
+  margin: 0.3rem 0;
+}
+
+.detailed .country-info .about-country .statistics p span {
+  font-weight: initial;
+}
+
+.detailed .country-info .about-country .borders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.detailed .country-info .about-country .borders .b-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.detailed .country-info .about-country .borders .cons span {
+  border: 2px solid rgba(133, 133, 133, 0.5);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 1rem;
+  line-height: 2.5rem;
+}
+
+.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */
