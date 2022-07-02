@@ -1,6 +1,7 @@
 const filter = document.querySelector("#country");
 const gallery = document.querySelector(".gallery");
 const country = document.querySelector(".detailed");
+// console.log(country.clientX)
 
 //| fetch region's data and set it to card
 let getData = async (value) => {
@@ -36,11 +37,13 @@ function getRegion(e) {
 
 //| get Country details & display it
 const getCountry = async (name) => {
-  console.log(name);
+  console.log({ name });
 
   const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
   const data = await res.json();
   console.log(data);
+
+  // window.open("./", "_self");
   //?  to Array
   let native = Object.values(data[0].name.nativeName);
   // console.log(native[0].common);
@@ -48,13 +51,11 @@ const getCountry = async (name) => {
   let Currency = Object.values(data[0].currencies);
   // console.log(Currency[0].name);
   let lang = Object.values(data[0].languages);
-  console.log(lang);
+  // console.log(lang);
 
-  let border = data[0].borders
-    ? Object.values(data[0].borders)
-    : "";
+  let border = data[0].borders ? Object.values(data[0].borders) : "";
 
-  console.log(border);
+  // console.log(border);
 
   //?  to Array
   country.innerHTML = "";
@@ -95,12 +96,39 @@ const getCountry = async (name) => {
 
   country.appendChild(conData);
 
-  country.classList.toggle("active");
+  let wrapper = document.querySelector(".detail-wrapper");
+
+  wrapper.classList.toggle("active");
 
   const backBtn = document.querySelector(".back");
   backBtn.addEventListener("click", () => {
-    country.classList.toggle("active");
+    wrapper.classList.toggle("active");
   });
 };
 
+//| Theme Toggle
+
 document.addEventListener("load", getData("africa"));
+const theme = document.querySelector(".theme");
+const mode = document.querySelector(".day-mode");
+const dark = document.querySelector(".dark path");
+const moon = document.querySelector(".dark");
+const sun = document.querySelector(".day");
+const modeText = document.querySelector(".mode");
+theme.addEventListener("click", () => {
+  console.log({ dark });
+  if (mode.className == "day-mode") {
+    // document.body.classList.remove("day-mode");
+    // dark.innerHTML=''
+    document.body.classList.add("dark-mode");
+    moon.style.display = "none";
+    sun.style.display = "block";
+    modeText.innerText = "Day Mode";
+  } else {
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("day-mode");
+    sun.style.display = "none";
+    moon.style.display = "block";
+    modeText.innerText = "Dark Mode";
+  }
+});
