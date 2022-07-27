@@ -31,13 +31,13 @@
           </g>
         </svg>
         <svg
-        class="day"
+          class="day"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           height="20px"
           version="1.1"
           viewBox="0 0 32 32"
-          width="20px"          
+          width="20px"
         >
           <g
             fill="none"
@@ -67,18 +67,20 @@
     <main>
       <div class="utility">
         <div class="search">
-          <svg
-            class="search-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            height="48"
-            viewBox="0 0 48 48"
-            width="48"
-          >
-            <path
-              d="M31 28h-1.59l-.55-.55C30.82 25.18 32 22.23 32 19c0-7.18-5.82-13-13-13S6 11.82 6 19s5.82 13 13 13c3.23 0 6.18-1.18 8.45-3.13l.55.55V31l10 9.98L40.98 38 31 28zm-12 0c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"
-            />
-            <path d="M0 0h48v48H0z" fill="none" />
-          </svg>
+          <button onclick="Search()">
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              viewBox="0 0 48 48"
+              width="48"
+            >
+              <path
+                d="M31 28h-1.59l-.55-.55C30.82 25.18 32 22.23 32 19c0-7.18-5.82-13-13-13S6 11.82 6 19s5.82 13 13 13c3.23 0 6.18-1.18 8.45-3.13l.55.55V31l10 9.98L40.98 38 31 28zm-12 0c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"
+              />
+              <path d="M0 0h48v48H0z" fill="none" />
+            </svg>
+          </button>
           <label for="">
             <input
               type="text"
@@ -86,6 +88,7 @@
               id="search"
               placeholder="Search for a country..."
               autocomplete="off"
+              onkeydown="setSearch(event)"
             />
           </label>
         </div>
@@ -112,30 +115,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
-<!-- <svg
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  height="32px"
-  version="1.1"
-  viewBox="0 0 32 32"
-  width="32px"
->
-  <title />
-  <desc />
-  <defs />
-  <g fill="none" fill-rule="evenodd" id="Sunny" stroke="none" stroke-width="1">
-    <g
-      stroke="#979797"
-      stroke-width="2"
-      transform="translate(2.000000, 2.000000)"
-    >
-      <circle cx="14" cy="14" id="Oval-4" r="8" />
-      <path
-        d="M14,0 L14,3 M23.8994949,4.10050506 L21.7781746,6.22182541 M28,14 L25,14 M23.8994949,23.8994949 L21.7781746,21.7781746 M14,28 L14,25 M4.10050506,23.8994949 L6.22182541,21.7781746 M3.83475851e-17,14 L3,14 M4.10050506,4.10050506 L6.22182541,6.22182541"
-        id="Path-7"
-        stroke-linecap="round"
-      />
-    </g>
-  </g>
-</svg> -->

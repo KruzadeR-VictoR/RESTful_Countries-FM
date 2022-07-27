@@ -3,6 +3,12 @@ const gallery = document.querySelector(".gallery");
 const country = document.querySelector(".detailed");
 // console.log(country.clientX)
 
+//< Reload the page on Click
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", () => {
+  window.location.reload();
+});
+
 //| fetch region's data and set it to card
 let getData = async (value) => {
   const res = await fetch(`https://restcountries.com/v3.1/region/${value}`);
@@ -43,7 +49,6 @@ const getCountry = async (name) => {
   const data = await res.json();
   console.log(data);
 
-  // window.open("./", "_self");
   //?  to Array
   let native = Object.values(data[0].name.nativeName);
   // console.log(native[0].common);
@@ -97,12 +102,20 @@ const getCountry = async (name) => {
   country.appendChild(conData);
 
   let wrapper = document.querySelector(".detail-wrapper");
+  let detailed = document.querySelectorAll(".detail");
 
   wrapper.classList.toggle("active");
+
+  console.log({ wrapper });
 
   const backBtn = document.querySelector(".back");
   backBtn.addEventListener("click", () => {
     wrapper.classList.toggle("active");
+  });
+  wrapper.addEventListener("click", () => {
+    if (wrapper.classList.contains("active")) {
+      wrapper.classList.remove("active");
+    }
   });
 };
 
@@ -132,3 +145,61 @@ theme.addEventListener("click", () => {
     modeText.innerText = "Dark Mode";
   }
 });
+
+//| display in card
+
+const displayCard = (country) => {
+  gallery.innerHTML = "";
+
+  let card = document.createElement("div");
+  card.innerHTML = `<div class="card" onClick="getCountry('${
+    country.name.common
+  }')">
+    <img src="${country.flags.png}" alt="Flag of ${
+    country.name.common
+  }" class="flag" />
+    <div class="about">
+      <h4>${country.name.common}</h4>
+      <p>Population : <span class="popul-no">${country.population.toLocaleString()}</span></p>
+      <p>Region : <span class="region-name">${country.region}</span></p>
+      <p>Capital : <span class="cap-name">${country.capital[0]}</span></p>
+    </div>
+  </div>
+  `;
+  gallery.appendChild(card);
+};
+
+//| Search a Country
+
+const searchInput = document.querySelector("#search");
+
+const setSearch = async (e) => {
+  if (e.key === "Enter") {
+    console.log(e.target.value);
+    try {
+      const res = await fetch(
+        `https://restcountries.com/v3.1/name/${e.target.value.toLowerCase()}`
+      );
+      const searchData = await res.json();      
+      displayCard(searchData[0]);
+    } catch (error) {
+      console.log(error);
+    }
+    searchInput.value = "";
+  }
+};
+
+//< For Mobile Search
+
+const Search = async () => {
+  try {
+    const res = await fetch(
+      `https://restcountries.com/v3.1/name/${searchInput.value.toLowerCase()}`
+    );
+    const searchData = await res.json();    
+    displayCard(searchData[0]);
+  } catch (error) {
+    console.log(error);
+  }
+  searchInput.value = "";
+};
