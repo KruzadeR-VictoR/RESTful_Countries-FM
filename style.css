@@ -291,7 +291,8 @@ body {
   }
 }
 
-.day-mode .gallery .card .about h4 {
+.day-mode .gallery .card .about h1 {
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 

@@ -21,7 +21,7 @@ let getData = async (value) => {
     }')">
     <img src="${con.flags.png}" alt="Flag of ${con.name.common}" class="flag" />
     <div class="about">
-      <h4>${con.name.common}</h4>
+      <h1>${con.name.common}</h1>
       <p>Population : <span class="popul-no">${con.population.toLocaleString()}</span></p>
       <p>Region : <span class="region-name">${con.region}</span></p>
       <p>Capital : <span class="cap-name">${con.capital[0]}</span></p>
@@ -159,7 +159,7 @@ const displayCard = (country) => {
     country.name.common
   }" class="flag" />
     <div class="about">
-      <h4>${country.name.common}</h4>
+      <h1>${country.name.common}</h1>
       <p>Population : <span class="popul-no">${country.population.toLocaleString()}</span></p>
       <p>Region : <span class="region-name">${country.region}</span></p>
       <p>Capital : <span class="cap-name">${country.capital[0]}</span></p>

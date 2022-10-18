@@ -67,7 +67,7 @@
     <main>
       <div class="utility">
         <div class="search">
-          <button onclick="Search()">
+          <button onclick="Search()" aria-label="search Button">
             <svg
               class="search-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@
               <path d="M0 0h48v48H0z" fill="none" />
             </svg>
           </button>
-          <label for="">
+          <label for="search">
             <input
               type="text"
               name="search"
@@ -93,7 +93,7 @@
           </label>
         </div>
         <div class="choose">
-          <select name="country" id="country" onchange="getRegion(event)">
+          <select name="country" id="country" onchange="getRegion(event)" aria-label="select a Region">
             <option value="">Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>
